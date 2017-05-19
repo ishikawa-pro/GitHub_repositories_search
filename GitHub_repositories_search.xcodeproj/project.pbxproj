@@ -196,6 +196,7 @@
 				TargetAttributes = {
 					E9494A711ECF27D5001276E9 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 86E8FPKX8A;
 						ProvisioningStyle = Automatic;
 					};
 					E9494A881ECF27D5001276E9 = {
@@ -416,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 86E8FPKX8A;
 				INFOPLIST_FILE = GitHub_repositories_search/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ishikawa.GitHub-repositories-search";
@@ -428,6 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 86E8FPKX8A;
 				INFOPLIST_FILE = GitHub_repositories_search/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ishikawa.GitHub-repositories-search";
