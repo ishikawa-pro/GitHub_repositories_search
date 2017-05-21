@@ -8,6 +8,7 @@
 
 import Foundation
 
+//リポジトリ情報を格納する構造体
 struct Repository {
     let id: Int
     let name: String
