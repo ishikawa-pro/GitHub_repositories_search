@@ -16,4 +16,48 @@ struct Repository {
     let htmlUrl: String
     let description: String
     let owner: User
+    
+    init(json: Any) throws{
+        //JSONからAnyへ
+        guard let dictionary = json as? [String : Any] else{
+            throw JSONDecodeError.invalidFormat(json: json)
+        }
+        
+        //idの取得
+        guard let id = dictionary["id"] as? Int else{
+            throw JSONDecodeError.missingValue(key: "id", actualValue: dictionary["id"])
+        }
+        
+        //nameの取得
+        guard let name = dictionary["name"] as? String else{
+            throw JSONDecodeError.missingValue(key: "name", actualValue: dictionary["name"])
+        }
+        
+        //full_nameの取得
+        guard let fullName = dictionary["full_name"] as? String else{
+            throw JSONDecodeError.missingValue(key: "fullName", actualValue: dictionary["full_name"])
+        }
+        
+        //html_urlの取得
+        guard let htmlUrl = dictionary["html_url"] as? String else{
+            throw JSONDecodeError.missingValue(key: "htmlUrl", actualValue: dictionary["html_url"])
+        }
+        
+        //descriptionの取得
+        guard let description = dictionary["description"] as? String else{
+            throw JSONDecodeError.missingValue(key: "description", actualValue: dictionary["description"])
+        }
+        
+        //ownerの取得
+        guard let ownerObject = dictionary["owner"] else{
+            throw JSONDecodeError.missingValue(key: "owner", actualValue: dictionary["owner"])
+        }
+        
+        self.id = id
+        self.name = name
+        self.fullName = fullName
+        self.htmlUrl = htmlUrl
+        self.description = description
+        self.owner = try User(json: ownerObject)
+    }
 }
