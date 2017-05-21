@@ -20,6 +20,7 @@
 		E9494A991ECF27D5001276E9 /* GitHub_repositories_searchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9494A981ECF27D5001276E9 /* GitHub_repositories_searchUITests.swift */; };
 		E9EFCD6D1ED1513100CB3BF2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EFCD6C1ED1513100CB3BF2 /* User.swift */; };
 		E9EFCD6F1ED1587500CB3BF2 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EFCD6E1ED1587500CB3BF2 /* Repository.swift */; };
+		E9EFCD711ED15E7600CB3BF2 /* JSONDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EFCD701ED15E7600CB3BF2 /* JSONDecodeError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		E9494A9A1ECF27D5001276E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9EFCD6C1ED1513100CB3BF2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E9EFCD6E1ED1587500CB3BF2 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		E9EFCD701ED15E7600CB3BF2 /* JSONDecodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecodeError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			children = (
 				E9EFCD6C1ED1513100CB3BF2 /* User.swift */,
 				E9EFCD6E1ED1587500CB3BF2 /* Repository.swift */,
+				E9EFCD701ED15E7600CB3BF2 /* JSONDecodeError.swift */,
 			);
 			name = Response;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 			files = (
 				E9EFCD6D1ED1513100CB3BF2 /* User.swift in Sources */,
 				E9494A781ECF27D5001276E9 /* ViewController.swift in Sources */,
+				E9EFCD711ED15E7600CB3BF2 /* JSONDecodeError.swift in Sources */,
 				E9EFCD6F1ED1587500CB3BF2 /* Repository.swift in Sources */,
 				E9494A761ECF27D5001276E9 /* AppDelegate.swift in Sources */,
 				E9494A7E1ECF27D5001276E9 /* GitHub_repositories_search.xcdatamodeld in Sources */,
