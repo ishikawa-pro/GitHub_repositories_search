@@ -11,6 +11,7 @@
 		917ADED127DA2F9F9121E004 /* Pods_GitHub_repositories_searchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A08EEE74A7C1DE51D7F4CE1 /* Pods_GitHub_repositories_searchUITests.framework */; };
 		CF1DDFD5FC5EE641AFD61C91 /* Pods_GitHub_repositories_search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B21E31F046C25D194333192 /* Pods_GitHub_repositories_search.framework */; };
 		E90820B81ED25897006FB6C2 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90820B71ED25897006FB6C2 /* JSONDecodable.swift */; };
+		E94727FC1ED636E5007F7EEC /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94727FB1ED636E5007F7EEC /* SearchResponse.swift */; };
 		E9494A761ECF27D5001276E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9494A751ECF27D5001276E9 /* AppDelegate.swift */; };
 		E9494A781ECF27D5001276E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9494A771ECF27D5001276E9 /* ViewController.swift */; };
 		E9494A7B1ECF27D5001276E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9494A791ECF27D5001276E9 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		C2CCA0CC52E9E6F422DEC7DE /* Pods-GitHub_repositories_searchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub_repositories_searchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHub_repositories_searchTests/Pods-GitHub_repositories_searchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF41A57B1B18E011B371BEE0 /* Pods-GitHub_repositories_searchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub_repositories_searchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHub_repositories_searchUITests/Pods-GitHub_repositories_searchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E90820B71ED25897006FB6C2 /* JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
+		E94727FB1ED636E5007F7EEC /* SearchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		E9494A721ECF27D5001276E9 /* GitHub_repositories_search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHub_repositories_search.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9494A751ECF27D5001276E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9494A771ECF27D5001276E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				E9EFCD6E1ED1587500CB3BF2 /* Repository.swift */,
 				E9EFCD701ED15E7600CB3BF2 /* JSONDecodeError.swift */,
 				E90820B71ED25897006FB6C2 /* JSONDecodable.swift */,
+				E94727FB1ED636E5007F7EEC /* SearchResponse.swift */,
 			);
 			name = Response;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				E9494A781ECF27D5001276E9 /* ViewController.swift in Sources */,
 				E90820B81ED25897006FB6C2 /* JSONDecodable.swift in Sources */,
 				E9EFCD711ED15E7600CB3BF2 /* JSONDecodeError.swift in Sources */,
+				E94727FC1ED636E5007F7EEC /* SearchResponse.swift in Sources */,
 				E9EFCD6F1ED1587500CB3BF2 /* Repository.swift in Sources */,
 				E9494A761ECF27D5001276E9 /* AppDelegate.swift in Sources */,
 				E9494A7E1ECF27D5001276E9 /* GitHub_repositories_search.xcdatamodeld in Sources */,
@@ -628,6 +632,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A966A7AA22E107A1AB19C4C1 /* Pods-GitHub_repositories_search.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 86E8FPKX8A;
 				INFOPLIST_FILE = GitHub_repositories_search/Info.plist;
@@ -642,6 +647,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 784521144A55D1D2BCFEC4EC /* Pods-GitHub_repositories_search.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 86E8FPKX8A;
 				INFOPLIST_FILE = GitHub_repositories_search/Info.plist;
