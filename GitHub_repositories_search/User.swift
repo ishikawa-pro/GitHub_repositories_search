@@ -10,7 +10,7 @@ import Foundation
 
 //リポジトリのOwnerの情報を格納する構造体
 //とりあえずid, name, avatar画像のurlのみ
-struct User {
+struct User : JSONDecodable{
     let id: Int
     let name: String
     let avatarUrl: String

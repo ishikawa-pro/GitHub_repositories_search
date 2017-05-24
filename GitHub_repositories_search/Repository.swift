@@ -9,7 +9,7 @@
 import Foundation
 
 //リポジトリ情報を格納する構造体
-struct Repository {
+struct Repository : JSONDecodable{
     let id: Int
     let name: String
     let fullName: String
@@ -60,4 +60,5 @@ struct Repository {
         self.description = description
         self.owner = try User(json: ownerObject)
     }
+    
 }
