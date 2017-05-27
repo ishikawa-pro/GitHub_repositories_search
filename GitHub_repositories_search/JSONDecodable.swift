@@ -8,6 +8,8 @@
 
 import Foundation
 
+//JSONからインスタンスを生成する型は、イニシャライザが共通なため
+//プロトコルにより仕様を準拠させる。
 protocol JSONDecodable {
     init(json: Any) throws
 }

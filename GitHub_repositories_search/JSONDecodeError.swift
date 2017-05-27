@@ -8,6 +8,7 @@
 
 import Foundation
 
+//JSONからインスタンスの生成に失敗した時の状況を表す列挙型
 enum JSONDecodeError : Error{
     //JSONの構造が期待しているものと異なっている状態
     case invalidFormat(json: Any)

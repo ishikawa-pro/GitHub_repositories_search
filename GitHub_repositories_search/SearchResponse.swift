@@ -8,6 +8,10 @@
 
 import Foundation
 
+//検索結果の構造体
+//Search APIのリポジトリ検索以外のエンドポイントでも使えるようにジェネリック型を利用
+//JSONからインスタンスを生成するためJSONDecodableプロトコルを準拠
+//init(json:) でItem型でJSONからインスタンスを生成するのでItem型もJSONDecodableで型制約
 struct SearchResponse<Item : JSONDecodable> : JSONDecodable{
     let totalCount: Int
     let items: [Item]
