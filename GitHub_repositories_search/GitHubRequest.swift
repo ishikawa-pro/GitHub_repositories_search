@@ -7,16 +7,15 @@
 //
 
 import Foundation
+import Alamofire
 
 
 //リクエストを表す型
 protocol GitHubRequest {
-    //リクエストからレスポンスの型を指定できるように連想型を使用。
-    associatedtype Response : JSONDecodable
     var baseURL: URL { get }
     var path: String{ get }
     var method: HTTPMethod { get }
-    var parameters: Any? { get }
+    var parameters: Parameters? { get }
 }
 
 //baseURLは全てのリクエストで共通なのでextensionでデフォルト実装
