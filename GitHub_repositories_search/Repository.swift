@@ -44,9 +44,9 @@ struct Repository : JSONDecodable{
         }
         
         //descriptionの取得
-        guard let description = dictionary["description"] as? String else{
-            throw JSONDecodeError.missingValue(key: "description", actualValue: dictionary["description"])
-        }
+        //descriptionは書かれていない場合があるのでnilだった場合は""を代入
+        let description = dictionary["description"] as? String ?? ""
+
         
         //ownerの取得
         guard let ownerObject = dictionary["owner"] else{
