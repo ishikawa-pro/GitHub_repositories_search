@@ -12,7 +12,6 @@ import Foundation
 //とりあえずid, name, avatar画像のurlのみ
 struct User : JSONDecodable{
     let id: Int
-    let name: String
     let avatarUrl: String
     
     init(json: Any) throws{
@@ -28,12 +27,6 @@ struct User : JSONDecodable{
                 key: "id", actualValue: dictionary["id"])
         }
         
-        //Anyからnameを取り出す
-        guard let name = dictionary["name"] as? String else {
-            throw JSONDecodeError.missingValue(
-                key: "name", actualValue: dictionary["name"])
-        }
-        
         //Anyからavatar_urlを取り出す
         guard let avatarUrl = dictionary["avatar_url"] as? String else {
             throw JSONDecodeError.missingValue(
@@ -41,7 +34,6 @@ struct User : JSONDecodable{
         }
         
         self.id = id
-        self.name = name
         self.avatarUrl = avatarUrl
     }
 }
