@@ -16,6 +16,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var keyword = ""
     var request: GitHubAPIRouter?
     var items = [JSONDecodable]()
+    var timerCount = 0
+    var searchCount = 10
+    var waitTime = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +45,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // カスタムセルクラス名でnibを作成する
         let nib = UINib(nibName: "RepositoryViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "customCell")
-    
+        
+        //タイマーを作成
+        let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.TimerEvent), userInfo: nil, repeats: true)
+        timer.fire()
     }
     
     //nibファイルをパラメタにとるイニシャライザinit
@@ -83,6 +89,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         return cell
     }
+    
+    //searchBarのテキストが変わったら呼ばれる
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //入力開始した時から時間を計測するため
+        self.waitTime = 0
+    }
 
     //検索ボタンを押した時
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -96,11 +108,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.searchBar.endEditing(true)
     }
     
+    //タイマーの関数
+    func TimerEvent(tm: Timer) -> Void {
+        self.timerCount += 1
+        self.waitTime += 1
+        if self.timerCount == 60 {
+            self.searchCount = 10
+        }
+        //入力してから一秒間次の入力がなければ検索を開始
+        if self.waitTime == 1 {
+            if let searchWord = self.searchBar.text{
+                self.keyword  = searchWord
+            }
+            //searchCount==1の時に実行すると検索ボタンを押しても検索できないため。
+            if self.keyword != "" && self.searchCount != 1{
+                //入力したkeywordよりリクエストの生成
+                self.request = GitHubAPIRouter.searchRepositories(parameters: self.keyword)
+                //APIを叩く
+                self.search()
+            }
+
+        }
+        
+    }
+    
+    
+    
     //検索の実行
     func search() -> Void {
         if let unwrappedRequest = self.request{
         Alamofire.request(unwrappedRequest).responseJSON { response in
+            self.searchCount -= 1
             switch unwrappedRequest{
+            //検索回数をプラス(1分間に10回まで)
             //SearchRepositoriesの時
             case .searchRepositories:
                 do{
